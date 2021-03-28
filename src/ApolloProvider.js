@@ -5,7 +5,7 @@ import { setContext } from "@apollo/client/link/context";
 import App from './App';
 
 const httpLink = createHttpLink({
-    uri: 'http://localhost:5000'
+    uri: 'https://fast-castle-09114.herokuapp.com/'
 })
 
 const setAuthorizationLink = setContext(() => {
