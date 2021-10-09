@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react';
 import { Menu } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../context/auth';
+import { isMobile } from 'react-device-detect';
 
 
 function MenuBar(){
@@ -12,7 +13,7 @@ function MenuBar(){
     const  handleItemClick = (e, { name }) => { setActiveItem(name)};
     const menuBar  = user ? (
       <div>
-      <Menu pointing secondary size="massive" color="teal">
+      <Menu stackable pointing secondary size="massive" color="teal" >
         <Menu.Item
           name={user?.username}
           active
@@ -21,16 +22,24 @@ function MenuBar(){
         />
         <Menu.Menu position='right'>
           <Menu.Item
+              name='Messages'
+              as={Link}
+              to="/messages"
+          />
+        </Menu.Menu>
+        <Menu.Menu position='right'>
+          <Menu.Item
               name='logout'
               onClick={logout}
           />
         </Menu.Menu>
+        
       </Menu>
     </div>
     ) : (
       <>
         <div>
-        <Menu pointing secondary size="massive" color="teal">
+        <Menu  stackable pointing secondary size="massive" color="teal">
           <Menu.Item
             name='home'
             active={activeItem === 'home'}

@@ -15,3 +15,14 @@ export  const FETCH_POSTS = gql`
         }
     }
 `;
+
+export const MESSAGE_SUBSCRIPTION = gql`
+  subscription($receivername: String!) {
+    newMessage(receivername: $receivername) {
+        id,
+        sender,
+        receiver,
+        message
+    }
+  }
+`;

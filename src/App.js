@@ -18,6 +18,7 @@ import MenuBar from "./components/common/MenuBar";
 import { AuthProvider } from "./components/context/auth";
 
 import { AuthRoute }from './components/context/authRedirect';
+import ChatBox from './components/pages/ChatBox';
 
 
 
@@ -33,6 +34,7 @@ function App() {
           <AuthRoute exact path="/login" component={Login} />
           <AuthRoute exact path="/register" component={Register} />
           <Route exact path="/posts/:postId" component={SinglePost} />
+          <Route exact path="/messages" component={ChatBox}/>
         </Container>
       </Router>
     </AuthProvider>

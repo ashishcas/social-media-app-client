@@ -7,7 +7,7 @@ import { gql, useMutation } from '@apollo/client';
 import { Link } from 'react-router-dom';
 
 
-const LIKE_POST_MUTATION = gql`
+export const LIKE_POST_MUTATION = gql`
   mutation likePost($postId: ID!) {
     likePost(postId: $postId) {
       id
@@ -54,12 +54,13 @@ export const LikeButton = ({ user, post: { id , likeCount, likes }}) =>{
         </Button>
     )
     return(
-        <>
+        <div id="likeButton">
         <Popup 
-        content={ liked ? 'Unlike': 'like'} 
+        className='like-popup'
+        content={ liked ? 'Unlike': 'like'}
         inverted
         trigger={            
-          <Button as='div' labelPosition='right' onClick={likePost}>
+          <Button as='div' labelPosition='right'  onClick={likePost}>
           {likeButton}
           <Label as='a' basic color='red' pointing='left'>
               {likeCount}
@@ -68,6 +69,6 @@ export const LikeButton = ({ user, post: { id , likeCount, likes }}) =>{
             }
           />
 
-        </>
+        </div>
     )
 }
