@@ -59,7 +59,6 @@
   },
   "proxy": "https://fast-castle-09114.herokuapp.com/",
   "devDependencies": {
-    "babel-jest": "^27.2.1",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.6",
     "enzyme-to-json": "^3.6.2",
