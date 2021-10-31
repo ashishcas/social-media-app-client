@@ -15,7 +15,7 @@ const httpLink = createHttpLink({
 })
 
 const wsLink = new WebSocketLink({
-    uri:  'ws://fast-castle-09114.herokuapp.com/graphql',
+    uri:  'wss://fast-castle-09114.herokuapp.com/graphql',
     // 'ws://localhost:5000/graphql',
     options: {
       reconnect: true
