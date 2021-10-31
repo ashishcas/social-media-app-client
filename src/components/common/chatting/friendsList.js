@@ -5,7 +5,6 @@ const FriendListWrapper = styled.li`
 
 const FriendsList = ({ friends, selectedFriend }) => {
 
-    console.log({friends});
 
     const handleClick = (event) => {
         event.preventDefault();

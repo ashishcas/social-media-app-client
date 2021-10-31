@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Provider from './ApolloProvider';
+const path = require('path');
+require('dotenv').config({ path: path.resolve(__dirname, "../.env") });
+
 
 ReactDOM.render(
   <React.StrictMode>
