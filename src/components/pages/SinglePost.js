@@ -94,6 +94,8 @@ function SinglePost(props){
             comments
         } = getPost
 
+        let seed = Math.floor(Math.random() * 10) + 1;
+
 
         postMarkup = (
             <Grid style={{margin: '0 auto'}} centered colums={isMobile ? 1: 2}>
@@ -101,7 +103,7 @@ function SinglePost(props){
                     <Image
                         floated='right'
                         size='small'
-                        src='https://react.semantic-ui.com/images/avatar/large/molly.png'
+                        src= {`https://avatars.dicebear.com/api/pixel-art/${seed}.svg`}
                     />
                     </Grid.Column>
                 {/* </Grid.Row>

@@ -9,12 +9,15 @@ import { LikeButton } from './LikeButton';
 
 import { DeleteButton } from '../common/DeleteButton';
 
+
+
+
 const PostCard = ({ post: {id, body ,createdAt, username, likeCount, likes, comments, commentCount } }) => {
 
+    // generate random number 1 to 10
+ 
+    let seed = Math.floor(Math.random() * 10) + 1;
 
-    // const refreshPage = () => {
-    //     props.history.push("/")
-    // }
 
     const { user } = useContext(AuthContext);
     return(
@@ -23,7 +26,7 @@ const PostCard = ({ post: {id, body ,createdAt, username, likeCount, likes, comm
                 <Image
                 floated='right'
                 size='mini'
-                src='https://react.semantic-ui.com/images/avatar/large/molly.png'
+                src= {`https://avatars.dicebear.com/api/pixel-art/${seed}.svg`}
                 />
                 <Card.Header>{username}</Card.Header>
                 <Card.Meta as={Link} to={`/posts/${id}`}>{moment(createdAt).fromNow(true)}</Card.Meta>
